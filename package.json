@@ -1,6 +1,6 @@
 {
   "name": "egg-view-art",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "art-template view for egg.js",
   "eggPlugin": {
     "name": "art"
