@@ -29,7 +29,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test": "egg-bin pkgfiles && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
@@ -38,9 +38,9 @@
     "autod": "autod"
   },
   "files": [
+    "config",
     "app.js",
-    "agent.js",
-    "config"
+    "lib"
   ],
   "ci": {
     "version": "6, 8"

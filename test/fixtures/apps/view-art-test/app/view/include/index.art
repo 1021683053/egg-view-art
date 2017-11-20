@@ -1,0 +1,2 @@
+hello {{include './header.art'}}
+hello {{include './footer.art'}}
