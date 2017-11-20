@@ -2,6 +2,9 @@
 
 const request = require('supertest');
 const mm = require('egg-mock');
+const fs = require('mz/fs');
+const path = require('path');
+const fixtures = path.join(__dirname, 'fixtures');
 
 describe('test/view-art.test.js', () => {
   let app;
@@ -35,20 +38,26 @@ describe('test/view-art.test.js', () => {
       .expect('hello header\nhello footer\n')
       .expect(200);
   });
+  it('should render with helper', () => {
+    return app.httpRequest()
+      .get('/helper')
+      .expect('hello world\n')
+      .expect(200);
+  });
 
-  // it('should render with cache', function* () {
-  //   const cacheFile = path.join(fixtures, 'apps/ejs-view/app/view/cache.ejs');
-  //   yield fs.writeFile(cacheFile, '1');
-  //   yield app.httpRequest()
-  //     .get('/cache')
-  //     .expect('1')
-  //     .expect(200);
+  it('should render with cache',  async ()=>{
+    const cacheFile = path.join(fixtures, 'apps/view-art-test/app/view/cache.art');
+    await fs.writeFile(cacheFile, '1');
+    await app.httpRequest()
+      .get('/cache')
+      .expect('1')
+      .expect(200);
 
-  //   yield fs.writeFile(cacheFile, '2');
-  //   yield app.httpRequest()
-  //     .get('/cache')
-  //     .expect('1')
-  //     .expect(200);
-  // });
+    await fs.writeFile(cacheFile, '2');
+    await app.httpRequest()
+      .get('/cache')
+      .expect('2')
+      .expect(200);
+  });
 
 });

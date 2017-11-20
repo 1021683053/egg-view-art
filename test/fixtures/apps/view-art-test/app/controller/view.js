@@ -13,9 +13,13 @@ class ViewController extends Controller {
         await ctx.render('include/index.art');
     }
 
-    // async cache(ctx){
-    //     await ctx.render('cache.art');
-    // }
+    async renderWithHelper(ctx) {
+        await ctx.render('helper.art');
+    };
+
+    async cache(ctx){
+        await ctx.render('cache.art');
+    };
 }
 
 module.exports = ViewController;
