@@ -1,6 +1,7 @@
 # egg-view-art
 
 [![NPM version][npm-image]][npm-url]
+[![Build Status](https://www.travis-ci.org/1021683053/egg-view-art.svg?branch=master)](https://www.travis-ci.org/1021683053/egg-view-art)
 
 [npm-image]: https://img.shields.io/npm/v/egg-view-art.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg-view-art

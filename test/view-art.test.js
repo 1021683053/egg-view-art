@@ -45,16 +45,16 @@ describe('test/view-art.test.js', () => {
       .expect(200);
   });
 
-  it('should render with cache',  async ()=>{
+  it('should render with cache',  function* (){
     const cacheFile = path.join(fixtures, 'apps/view-art-test/app/view/cache.art');
-    await fs.writeFile(cacheFile, '1');
-    await app.httpRequest()
+    yield fs.writeFile(cacheFile, '1');
+    yield app.httpRequest()
       .get('/cache')
       .expect('1')
       .expect(200);
 
-    await fs.writeFile(cacheFile, '2');
-    await app.httpRequest()
+    yield fs.writeFile(cacheFile, '2');
+    yield app.httpRequest()
       .get('/cache')
       .expect('2')
       .expect(200);
