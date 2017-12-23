@@ -39,5 +39,11 @@ module.exports = {
 
     cache: function* (ctx){
         yield ctx.render('cache.art');
+    },
+
+    renderWithImports: function* (ctx){
+        yield ctx.render('imports.art', {
+            data: 1
+        });
     }
 };
