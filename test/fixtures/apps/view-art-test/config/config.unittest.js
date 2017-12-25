@@ -9,3 +9,11 @@ exports.view = {
         '.html': 'art'
     }
 };
+
+exports.art = {
+    imports: {
+        hundredTimes (value) {
+            return value * 100
+        }
+    }
+}

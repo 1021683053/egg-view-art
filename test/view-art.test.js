@@ -60,4 +60,11 @@ describe('test/view-art.test.js', () => {
       .expect(200);
   });
 
+  it('should render with imports', () => {
+    return app.httpRequest()
+      .get('/imports')
+      .expect('100')
+      .expect(200);
+  });
+
 });

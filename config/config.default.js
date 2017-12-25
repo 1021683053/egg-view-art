@@ -14,7 +14,6 @@ module.exports = appInfo => {
         art: {
             root: path.join(appInfo.baseDir, 'app/view'),
             filename: null,
-            rules: 'artRule',
             escape: true,
             debug: process.env.NODE_ENV !== 'production',
             bail: true,

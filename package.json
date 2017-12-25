@@ -1,6 +1,6 @@
 {
   "name": "egg-view-art",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "art-template view for egg.js",
   "eggPlugin": {
     "name": "art"
@@ -11,7 +11,7 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "art-template": "^4.12.1"
+    "art-template": "^4.12.2"
   },
   "devDependencies": {
     "autod": "^2.8.0",
